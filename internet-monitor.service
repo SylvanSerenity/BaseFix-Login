@@ -1,0 +1,13 @@
+
+[Unit]
+Description=Internet Monitor Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/node /usr/src/app/internet-monitor.js
+Restart=always
+Environment=PATH=/usr/bin:/usr/local/bin
+WorkingDirectory=/usr/src/app
+
+[Install]
+WantedBy=multi-user.target
