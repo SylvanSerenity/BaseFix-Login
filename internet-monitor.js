@@ -1,3 +1,4 @@
+console.log('Preparing...');
 const fs = require('fs');
 const { Builder, By } = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
@@ -109,3 +110,4 @@ process.on('SIGINT', () => {
 
 // Main loop
 setInterval(checkInternet, 1000 / attemptsPerSec);
+console.log('Continuously checking Internet status...');
