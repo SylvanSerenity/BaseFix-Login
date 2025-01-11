@@ -7,7 +7,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Install dependencies
 RUN echo "Installing dependencies..." && \
     apt-get update && apt-get install -y \
-        chromium-chromedriver \
+        chromium-driver \
         iputils-ping \
         --no-install-recommends && \
         rm -rf /var/lib/apt/lists/*
