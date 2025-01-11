@@ -6,6 +6,8 @@ After=network.target
 [Service]
 ExecStart=/usr/bin/node /usr/src/app/internet-monitor.js
 Restart=always
+User=monitor
+Group=monitor
 Environment=PATH=/usr/bin:/usr/local/bin
 WorkingDirectory=/usr/src/app
 

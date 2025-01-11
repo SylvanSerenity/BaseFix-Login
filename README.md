@@ -16,7 +16,7 @@ A system running Linux (or WSL) is required.
 2. Edit `config.json` with your username and password.
 3. From the repository directory, run the `linux-install.sh` script as administrator: `sudo sh linux-install.sh`
 
-    *Note: Administrator rights are required to set up the systemctl service.*
+    *Note: Administrator rights are required to install dependencies, create the monitor user, and set up the systemctl service.*
 
 4. The service should run automatically and print its status. It will run whenever the device is rebooted, ensuring you have connection after power outages.
 

@@ -20,6 +20,8 @@ const ispPage = 'http://login.basefix.net';
 const attemptsPerSec = 5; // Check connection 5 times per second
 const attemptsPerFailure = 3; // Run script immediately after 3 failures
 const attemptsPerRetry = attemptsPerSec * 5; // Retry script every 5 seconds after failure
+const tempUserDataDir = '/usr/src/app/chromium-data';
+const tempCacheDir = '/usr/src/app/chromium-cache';
 
 // Global variables
 let failedPingCount = 0; // Counter for consecutive failed pings
@@ -28,7 +30,7 @@ let driver = null; // WebDriver instance
 
 // Set up Chrome driver
 const options = new chrome.Options();
-options.addArguments('--headless', '--disable-gpu', '--no-sandbox', '--disable-dev-shm-usage', '--disable-features=CookiesWithoutSameSiteMustBeSecure', '--disable-site-isolation-trials', '--disable-blink-features=BlockCredentialedSubresources', '--disable-component-extensions-with-background-pages', '--disable-application-cache', '--disable-session-crashed-bubble', '--disable-restore-session-state');
+options.addArguments('--headless', '--disable-gpu', '--no-sandbox', '--disable-dev-shm-usage', '--disable-features=CookiesWithoutSameSiteMustBeSecure', '--disable-site-isolation-trials', '--disable-blink-features=BlockCredentialedSubresources', '--disable-component-extensions-with-background-pages', '--disable-application-cache', '--disable-session-crashed-bubble', '--disable-restore-session-state', `--user-data-dir=${tempUserDataDir}`, `--disk-cache-dir=${tempCacheDir}`);
 
 // Initialize WebDriver
 async function initializeDriver() {
