@@ -3,7 +3,7 @@
 # Install dependencies
 echo "Installing dependencies..."
 sudo apt-get update && sudo apt-get install -y \
-    chromium-driver \
+    chromium-chromedriver \
     iputils-ping \
     --no-install-recommends
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
