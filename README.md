@@ -8,21 +8,9 @@ BaseFix Login is a service inspired by IP SLA that monitors Internet connection 
 * The script itself sends 5 pings per second for monitoring, each of 9 bytes total (send/receive). This equates to 45B/sec, 3.9KB/min, or 234KB/hr. In other words, it is very lightweight.
 * Any OS with Docker Engine (containerized) or a Linux system (system service).
 
-## Linux Service Install (Recommended)
-
-A system running Linux (or WSL) is required.
-
-1. Download and extract the repository.
-2. Edit `config.json` with your username and password.
-3. From the repository directory, run the `linux-install.sh` script as administrator: `sudo sh linux-install.sh`
-
-    *Note: Administrator rights are required to install dependencies, create the monitor user, and set up the systemctl service.*
-
-4. The service should run automatically and print its status. It will run whenever the device is rebooted, ensuring you have connection after power outages.
-
 ## Docker Install
 
-[Docker](https://www.docker.com/products/docker-desktop/) must be installed.
+[Docker](https://www.docker.com/products/docker-desktop/) must be installed. Works on all platforms.
 
 1. Download and extract the repository.
 2. Edit `config.json` with your username and password.
@@ -38,3 +26,15 @@ A system running Linux (or WSL) is required.
 5. The Docker container should run after the image is built. You may delete the repository files from your device.
 
     *Note: You will need to manually restart the Docker container if your system restarts. You can start it by clicking the start button next to the container in the Docker Desktop application.*
+
+## Linux Service Install
+
+A system running Linux (or WSL) is required.
+
+1. Download and extract the repository.
+2. Edit `config.json` with your username and password.
+3. From the repository directory, run the `linux-install.sh` script as administrator: `sudo sh linux-install.sh`
+
+    *Note: Administrator rights are required to install dependencies, create the monitor user, and set up the systemctl service.*
+
+4. The service should run automatically and print its status. It will run whenever the device is rebooted, ensuring you have connection after power outages.
