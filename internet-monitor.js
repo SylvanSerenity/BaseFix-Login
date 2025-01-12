@@ -19,7 +19,7 @@ const host = '8.8.8.8'; // Google DNS
 const ispPage = 'http://login.basefix.net';
 const attemptsPerSec = 5; // Check connection 5 times per second
 const attemptsPerFailure = 3; // Run script immediately after 3 failures
-const attemptsPerRetry = attemptsPerSec * 5; // Retry script every 5 seconds after failure
+const attemptsPerRetry = attemptsPerSec * 10; // Retry script every 10 seconds after failure
 
 // Global variables
 let failedPingCount = 0; // Counter for consecutive failed pings
